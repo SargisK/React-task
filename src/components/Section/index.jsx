@@ -3,7 +3,6 @@ import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import ProsCons from './ProsCons';
 
-
 const styles = {
   section: {
     width: '100%',
@@ -15,7 +14,6 @@ const styles = {
 };
 
 class Section extends Component {
-
   state = {
     pros: ["it's really tasty", "it's really tasty", "it's really tasty", "it's really tasty", ''],
     cons: ['Makes me fat', '']
@@ -33,8 +31,16 @@ class Section extends Component {
     return (
       <section className={classes.section}>
         <Grid className={classes.sectionContainer} container>
-          <ProsCons updateProsCons={this.updateProsCons.bind(this)} prosConsArr={pros} prosConsName="pros" />
-          <ProsCons updateProsCons={this.updateProsCons.bind(this)} prosConsArr={cons} prosConsName="cons" />
+          <ProsCons
+              updateProsCons={this.updateProsCons}
+              prosConsArr={pros}
+              prosConsName="pros"
+          />
+          <ProsCons
+              updateProsCons={this.updateProsCons}
+              prosConsArr={cons}
+              prosConsName="cons"
+          />
         </Grid>
       </section>
     );
